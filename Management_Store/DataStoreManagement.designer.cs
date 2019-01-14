@@ -36,7 +36,7 @@ namespace Management_Store
     #endregion
 		
 		public DataStoreManagementDataContext() : 
-				base(global::Management_Store.Properties.Settings.Default.StoreManagementConnectionString, mappingSource)
+				base(global::Management_Store.Properties.Settings.Default.StoreManagementConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -139,7 +139,7 @@ namespace Management_Store
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string NAME
 		{
 			get
@@ -219,7 +219,7 @@ namespace Management_Store
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int PRICE
 		{
 			get

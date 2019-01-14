@@ -16,3 +16,21 @@ E:\IT K16\LT Windows\Do An Cuoi Ky\Final_Project_Management_Store\Management_Sto
 E:\IT K16\LT Windows\Do An Cuoi Ky\Final_Project_Management_Store\Management_Store\obj\Debug\Management_Store.Transaction.resources
 E:\IT K16\LT Windows\Do An Cuoi Ky\Final_Project_Management_Store\Management_Store\obj\Debug\Management_Store.csproj.ResolveComReference.cache
 E:\IT K16\LT Windows\Do An Cuoi Ky\Final_Project_Management_Store\Management_Store\obj\Debug\Management_Store.Import_Excel.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\bin\Debug\Management_Store.exe.config
+D:\IT\LT Windows\Final Project\Test\Management_Store\bin\Debug\Management_Store.exe
+D:\IT\LT Windows\Final Project\Test\Management_Store\bin\Debug\Management_Store.pdb
+D:\IT\LT Windows\Final Project\Test\Management_Store\bin\Debug\Bunifu_UI_v1.52.dll
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csprojResolveAssemblyReference.cache
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csproj.ResolveComReference.cache
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.Dashboard.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.Form1.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.Import_Excel.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.Properties.Resources.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.Transaction.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.UC_Dashboard.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.UC_Product.resources
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csproj.GenerateResource.cache
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csproj.CoreCompileInputs.cache
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csproj.CopyComplete
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.exe
+D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.pdb

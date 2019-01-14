@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Product));
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txt_search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -60,8 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.txt_search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,64 +71,112 @@
             // 
             this.bunifuCustomDataGrid1.AllowUserToOrderColumns = true;
             this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("UTM Bebas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("UTM American Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("UTM Americana EB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("UTM Americana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(615, 125);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(482, 125);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("UTM Americana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(763, 359);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(473, 359);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.panel3.Controls.Add(this.bunifuFlatButton4);
-            this.panel3.Controls.Add(this.txt_search);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.bunifuFlatButton3);
             this.panel3.Controls.Add(this.bunifuFlatButton2);
             this.panel3.Controls.Add(this.bunifuFlatButton1);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(3, 6);
+            this.panel3.Controls.Add(this.bunifuFlatButton4);
+            this.panel3.Controls.Add(this.txt_search);
+            this.panel3.Location = new System.Drawing.Point(3, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1378, 100);
+            this.panel3.Size = new System.Drawing.Size(964, 100);
             this.panel3.TabIndex = 6;
+            // 
+            // bunifuFlatButton4
+            // 
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 0;
+            this.bunifuFlatButton4.ButtonText = "Search";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = true;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = true;
+            this.bunifuFlatButton4.IconZoom = 55D;
+            this.bunifuFlatButton4.IsTab = false;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(724, 61);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.selected = false;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(130, 31);
+            this.bunifuFlatButton4.TabIndex = 35;
+            this.bunifuFlatButton4.Text = "Search";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search.Font = new System.Drawing.Font("UTM American Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.txt_search.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_search.HintText = "";
+            this.txt_search.isPassword = false;
+            this.txt_search.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.txt_search.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.txt_search.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.txt_search.LineThickness = 6;
+            this.txt_search.Location = new System.Drawing.Point(498, 52);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(14, 23, 14, 23);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(209, 40);
+            this.txt_search.TabIndex = 33;
+            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
             // bunifuFlatButton3
             // 
@@ -153,7 +200,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 55D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(144, 66);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(32, 69);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -164,7 +211,7 @@
             this.bunifuFlatButton3.Text = "Import Data From Excel";
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
             this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
             // 
             // bunifuFlatButton2
@@ -189,18 +236,18 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 55D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(455, -3);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(364, 3);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(148, 31);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(117, 31);
             this.bunifuFlatButton2.TabIndex = 33;
             this.bunifuFlatButton2.Text = "Refresh";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
             this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // bunifuFlatButton1
@@ -225,18 +272,18 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 55D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(144, 29);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(235, 37);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(449, 31);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(246, 31);
             this.bunifuFlatButton1.TabIndex = 33;
             this.bunifuFlatButton1.Text = "Add New Product";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // label3
@@ -272,7 +319,7 @@
             this.groupBox1.Font = new System.Drawing.Font("UTM Alberta Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(20, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 453);
+            this.groupBox1.Size = new System.Drawing.Size(456, 453);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Detail";
@@ -299,18 +346,18 @@
             this.btn_add.IconVisible = true;
             this.btn_add.IconZoom = 55D;
             this.btn_add.IsTab = false;
-            this.btn_add.Location = new System.Drawing.Point(346, 373);
+            this.btn_add.Location = new System.Drawing.Point(362, 375);
             this.btn_add.Name = "btn_add";
             this.btn_add.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btn_add.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_add.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_add.selected = false;
-            this.btn_add.Size = new System.Drawing.Size(118, 31);
+            this.btn_add.Size = new System.Drawing.Size(82, 29);
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "Add";
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_add.Textcolor = System.Drawing.Color.White;
-            this.btn_add.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Visible = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -336,18 +383,18 @@
             this.btn_delete.IconVisible = true;
             this.btn_delete.IconZoom = 55D;
             this.btn_delete.IsTab = false;
-            this.btn_delete.Location = new System.Drawing.Point(189, 373);
+            this.btn_delete.Location = new System.Drawing.Point(205, 375);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btn_delete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_delete.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_delete.selected = false;
-            this.btn_delete.Size = new System.Drawing.Size(126, 31);
+            this.btn_delete.Size = new System.Drawing.Size(126, 29);
             this.btn_delete.TabIndex = 3;
             this.btn_delete.Text = "Delete";
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_delete.Textcolor = System.Drawing.Color.White;
-            this.btn_delete.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_update
@@ -372,18 +419,18 @@
             this.btn_update.IconVisible = true;
             this.btn_update.IconZoom = 55D;
             this.btn_update.IsTab = false;
-            this.btn_update.Location = new System.Drawing.Point(30, 373);
+            this.btn_update.Location = new System.Drawing.Point(51, 375);
             this.btn_update.Name = "btn_update";
             this.btn_update.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btn_update.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_update.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_update.selected = false;
-            this.btn_update.Size = new System.Drawing.Size(141, 31);
+            this.btn_update.Size = new System.Drawing.Size(119, 29);
             this.btn_update.TabIndex = 4;
             this.btn_update.Text = "Update";
             this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_update.Textcolor = System.Drawing.Color.White;
-            this.btn_update.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.TextFont = new System.Drawing.Font("UTM Cooper Black", 14.25F);
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // txt_category
@@ -401,7 +448,7 @@
             this.txt_category.Location = new System.Drawing.Point(193, 135);
             this.txt_category.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_category.Name = "txt_category";
-            this.txt_category.Size = new System.Drawing.Size(370, 28);
+            this.txt_category.Size = new System.Drawing.Size(251, 28);
             this.txt_category.TabIndex = 32;
             this.txt_category.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -443,7 +490,7 @@
             this.txt_inventory.Location = new System.Drawing.Point(193, 326);
             this.txt_inventory.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_inventory.Name = "txt_inventory";
-            this.txt_inventory.Size = new System.Drawing.Size(370, 28);
+            this.txt_inventory.Size = new System.Drawing.Size(251, 28);
             this.txt_inventory.TabIndex = 29;
             this.txt_inventory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -462,7 +509,7 @@
             this.txt_price.Location = new System.Drawing.Point(193, 276);
             this.txt_price.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_price.Name = "txt_price";
-            this.txt_price.Size = new System.Drawing.Size(370, 28);
+            this.txt_price.Size = new System.Drawing.Size(251, 28);
             this.txt_price.TabIndex = 27;
             this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -493,7 +540,7 @@
             this.txt_purchase.Location = new System.Drawing.Point(193, 227);
             this.txt_purchase.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_purchase.Name = "txt_purchase";
-            this.txt_purchase.Size = new System.Drawing.Size(370, 28);
+            this.txt_purchase.Size = new System.Drawing.Size(251, 28);
             this.txt_purchase.TabIndex = 25;
             this.txt_purchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -524,7 +571,7 @@
             this.txt_producer.Location = new System.Drawing.Point(193, 178);
             this.txt_producer.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_producer.Name = "txt_producer";
-            this.txt_producer.Size = new System.Drawing.Size(370, 28);
+            this.txt_producer.Size = new System.Drawing.Size(251, 28);
             this.txt_producer.TabIndex = 23;
             this.txt_producer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -554,7 +601,7 @@
             this.txt_name.Location = new System.Drawing.Point(193, 87);
             this.txt_name.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(370, 28);
+            this.txt_name.Size = new System.Drawing.Size(251, 28);
             this.txt_name.TabIndex = 21;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -585,7 +632,7 @@
             this.txt_id.Location = new System.Drawing.Point(193, 44);
             this.txt_id.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(370, 28);
+            this.txt_id.Size = new System.Drawing.Size(166, 28);
             this.txt_id.TabIndex = 15;
             this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -612,17 +659,18 @@
             // numericUpDown1
             // 
             this.numericUpDown1.AutoSize = true;
-            this.numericUpDown1.BackColor = System.Drawing.SystemColors.Control;
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(615, 490);
+            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown1.Location = new System.Drawing.Point(482, 490);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(177, 25);
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 25);
             this.numericUpDown1.TabIndex = 8;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -630,62 +678,6 @@
             0,
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // txt_search
-            // 
-            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_search.Font = new System.Drawing.Font("UTM American Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.txt_search.HintForeColor = System.Drawing.Color.Empty;
-            this.txt_search.HintText = "";
-            this.txt_search.isPassword = false;
-            this.txt_search.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.txt_search.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.txt_search.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.txt_search.LineThickness = 6;
-            this.txt_search.Location = new System.Drawing.Point(630, 50);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(14, 23, 14, 23);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(340, 40);
-            this.txt_search.TabIndex = 33;
-            this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
-            // 
-            // bunifuFlatButton4
-            // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "Search";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 55D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(972, 59);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(148, 31);
-            this.bunifuFlatButton4.TabIndex = 35;
-            this.bunifuFlatButton4.Text = "Search";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("UTM Cooper Black", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // UC_Product
             // 
@@ -696,7 +688,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Name = "UC_Product";
-            this.Size = new System.Drawing.Size(1381, 571);
+            this.Size = new System.Drawing.Size(967, 568);
             this.Load += new System.EventHandler(this.UC_Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.panel3.ResumeLayout(false);

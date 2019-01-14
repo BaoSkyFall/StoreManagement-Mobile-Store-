@@ -70,5 +70,10 @@ namespace Management_Store
             transaction1.Visible = true;
             transaction1.BringToFront();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,7 +56,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(575, 82);
+            this.panel4.Location = new System.Drawing.Point(400, 82);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(194, 134);
             this.panel4.TabIndex = 6;
@@ -99,7 +99,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(200, 82);
+            this.panel3.Location = new System.Drawing.Point(25, 82);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(194, 134);
             this.panel3.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(930, 82);
+            this.panel5.Location = new System.Drawing.Point(755, 82);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(194, 127);
             this.panel5.TabIndex = 7;
@@ -183,7 +183,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("UTM Aircona", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(350, 23);
+            this.label2.Location = new System.Drawing.Point(268, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 23);
             this.label2.TabIndex = 4;
@@ -198,7 +198,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label2);
             this.Name = "UC_Dashboard";
-            this.Size = new System.Drawing.Size(1381, 571);
+            this.Size = new System.Drawing.Size(967, 568);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

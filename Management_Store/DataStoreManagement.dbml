@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StoreManagement" Class="DataStoreManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JCG84Q8\SQLEXPRESS;Initial Catalog=StoreManagement;Integrated Security=True" SettingsObjectName="Management_Store.Properties.Settings" SettingsPropertyName="StoreManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HM8SG2K\SQLEXPRESS;Initial Catalog=StoreManagement;Integrated Security=True" SettingsObjectName="Management_Store.Properties.Settings" SettingsPropertyName="StoreManagementConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.PRODUCT" Member="PRODUCTs">
     <Type Name="PRODUCT">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NAME" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CATEGORY" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="PURCHASE_PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="INVENTORY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
