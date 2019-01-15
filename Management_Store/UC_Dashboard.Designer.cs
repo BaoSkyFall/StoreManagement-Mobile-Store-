@@ -84,17 +84,17 @@
             this.bunifuDatepicker4 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuDatepicker5 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txt_to2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txt_from2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.bunifuDatepicker6 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox6 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txt_start2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label14 = new System.Windows.Forms.Label();
-            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.dropdown_type2 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.radiobtn_date2 = new System.Windows.Forms.RadioButton();
+            this.radiobtn_time2 = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -616,8 +616,8 @@
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Controls.Add(this.radioButton3);
-            this.tabPage2.Controls.Add(this.radioButton4);
+            this.tabPage2.Controls.Add(this.radiobtn_date2);
+            this.tabPage2.Controls.Add(this.radiobtn_time2);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -637,6 +637,7 @@
             this.bunifuImageButton1.TabIndex = 11;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // groupBox4
             // 
@@ -658,11 +659,11 @@
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "SELL";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series3.Legend = "Legend1";
-            series3.Name = "Series2";
+            series3.Name = "PURCHASE";
             this.chart2.Series.Add(series2);
             this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(480, 225);
@@ -674,10 +675,10 @@
             this.groupBox5.Controls.Add(this.bunifuDatepicker4);
             this.groupBox5.Controls.Add(this.bunifuDatepicker5);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.bunifuMaterialTextbox4);
-            this.groupBox5.Controls.Add(this.bunifuMaterialTextbox5);
+            this.groupBox5.Controls.Add(this.txt_to2);
+            this.groupBox5.Controls.Add(this.txt_from2);
             this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Location = new System.Drawing.Point(212, 46);
+            this.groupBox5.Location = new System.Drawing.Point(212, 36);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 155);
             this.groupBox5.TabIndex = 9;
@@ -696,6 +697,7 @@
             this.bunifuDatepicker4.Size = new System.Drawing.Size(38, 37);
             this.bunifuDatepicker4.TabIndex = 11;
             this.bunifuDatepicker4.Value = new System.DateTime(2019, 1, 15, 2, 41, 14, 478);
+            this.bunifuDatepicker4.onValueChanged += new System.EventHandler(this.bunifuDatepicker4_onValueChanged);
             // 
             // bunifuDatepicker5
             // 
@@ -710,6 +712,7 @@
             this.bunifuDatepicker5.Size = new System.Drawing.Size(38, 37);
             this.bunifuDatepicker5.TabIndex = 10;
             this.bunifuDatepicker5.Value = new System.DateTime(2019, 1, 15, 2, 41, 14, 478);
+            this.bunifuDatepicker5.onValueChanged += new System.EventHandler(this.bunifuDatepicker5_onValueChanged);
             // 
             // label11
             // 
@@ -720,47 +723,47 @@
             this.label11.TabIndex = 9;
             this.label11.Text = "To";
             // 
-            // bunifuMaterialTextbox4
+            // txt_to2
             // 
-            this.bunifuMaterialTextbox4.BackColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox4.HintText = "";
-            this.bunifuMaterialTextbox4.isPassword = false;
-            this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(28, 108);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
-            this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(92, 26);
-            this.bunifuMaterialTextbox4.TabIndex = 8;
-            this.bunifuMaterialTextbox4.Text = "15 - 01 - 19";
-            this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_to2.BackColor = System.Drawing.Color.White;
+            this.txt_to2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_to2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_to2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_to2.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_to2.HintText = "";
+            this.txt_to2.isPassword = false;
+            this.txt_to2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_to2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_to2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_to2.LineThickness = 3;
+            this.txt_to2.Location = new System.Drawing.Point(28, 108);
+            this.txt_to2.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_to2.Name = "txt_to2";
+            this.txt_to2.Size = new System.Drawing.Size(92, 26);
+            this.txt_to2.TabIndex = 8;
+            this.txt_to2.Text = "15 - 01 - 19";
+            this.txt_to2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox5
+            // txt_from2
             // 
-            this.bunifuMaterialTextbox5.BackColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox5.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox5.HintText = "";
-            this.bunifuMaterialTextbox5.isPassword = false;
-            this.bunifuMaterialTextbox5.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox5.LineThickness = 3;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(28, 38);
-            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
-            this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(92, 26);
-            this.bunifuMaterialTextbox5.TabIndex = 5;
-            this.bunifuMaterialTextbox5.Text = "15 - 01 - 19";
-            this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_from2.BackColor = System.Drawing.Color.White;
+            this.txt_from2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_from2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_from2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_from2.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_from2.HintText = "";
+            this.txt_from2.isPassword = false;
+            this.txt_from2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_from2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_from2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_from2.LineThickness = 3;
+            this.txt_from2.Location = new System.Drawing.Point(28, 38);
+            this.txt_from2.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_from2.Name = "txt_from2";
+            this.txt_from2.Size = new System.Drawing.Size(92, 26);
+            this.txt_from2.TabIndex = 5;
+            this.txt_from2.Text = "15 - 01 - 19";
+            this.txt_from2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label12
             // 
@@ -775,10 +778,10 @@
             // 
             this.groupBox6.Controls.Add(this.bunifuDatepicker6);
             this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.bunifuMaterialTextbox6);
+            this.groupBox6.Controls.Add(this.txt_start2);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.bunifuDropdown2);
-            this.groupBox6.Location = new System.Drawing.Point(6, 46);
+            this.groupBox6.Controls.Add(this.dropdown_type2);
+            this.groupBox6.Location = new System.Drawing.Point(6, 36);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(200, 155);
             this.groupBox6.TabIndex = 8;
@@ -797,6 +800,7 @@
             this.bunifuDatepicker6.Size = new System.Drawing.Size(38, 36);
             this.bunifuDatepicker6.TabIndex = 4;
             this.bunifuDatepicker6.Value = new System.DateTime(2019, 1, 15, 2, 40, 55, 356);
+            this.bunifuDatepicker6.onValueChanged += new System.EventHandler(this.bunifuDatepicker6_onValueChanged);
             // 
             // label13
             // 
@@ -807,26 +811,26 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Type";
             // 
-            // bunifuMaterialTextbox6
+            // txt_start2
             // 
-            this.bunifuMaterialTextbox6.BackColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox6.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox6.HintText = "";
-            this.bunifuMaterialTextbox6.isPassword = false;
-            this.bunifuMaterialTextbox6.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox6.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox6.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.bunifuMaterialTextbox6.LineThickness = 3;
-            this.bunifuMaterialTextbox6.Location = new System.Drawing.Point(49, 108);
-            this.bunifuMaterialTextbox6.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuMaterialTextbox6.Name = "bunifuMaterialTextbox6";
-            this.bunifuMaterialTextbox6.Size = new System.Drawing.Size(92, 26);
-            this.bunifuMaterialTextbox6.TabIndex = 2;
-            this.bunifuMaterialTextbox6.Text = "15 - 01 - 19";
-            this.bunifuMaterialTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_start2.BackColor = System.Drawing.Color.White;
+            this.txt_start2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_start2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_start2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_start2.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_start2.HintText = "";
+            this.txt_start2.isPassword = false;
+            this.txt_start2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_start2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_start2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.txt_start2.LineThickness = 3;
+            this.txt_start2.Location = new System.Drawing.Point(49, 108);
+            this.txt_start2.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_start2.Name = "txt_start2";
+            this.txt_start2.Size = new System.Drawing.Size(92, 26);
+            this.txt_start2.TabIndex = 2;
+            this.txt_start2.Text = "15 - 01 - 19";
+            this.txt_start2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label14
             // 
@@ -837,45 +841,45 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Start";
             // 
-            // bunifuDropdown2
+            // dropdown_type2
             // 
-            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown2.BorderRadius = 3;
-            this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.Items = new string[] {
+            this.dropdown_type2.BackColor = System.Drawing.Color.Transparent;
+            this.dropdown_type2.BorderRadius = 3;
+            this.dropdown_type2.ForeColor = System.Drawing.Color.White;
+            this.dropdown_type2.Items = new string[] {
         "Day",
         "Month",
         "Year"};
-            this.bunifuDropdown2.Location = new System.Drawing.Point(50, 37);
-            this.bunifuDropdown2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown2.selectedIndex = -1;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(98, 30);
-            this.bunifuDropdown2.TabIndex = 1;
+            this.dropdown_type2.Location = new System.Drawing.Point(50, 37);
+            this.dropdown_type2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dropdown_type2.Name = "dropdown_type2";
+            this.dropdown_type2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.dropdown_type2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.dropdown_type2.selectedIndex = -1;
+            this.dropdown_type2.Size = new System.Drawing.Size(98, 30);
+            this.dropdown_type2.TabIndex = 1;
             // 
-            // radioButton3
+            // radiobtn_date2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(215, 13);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(60, 27);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.Text = "Date";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radiobtn_date2.AutoSize = true;
+            this.radiobtn_date2.Location = new System.Drawing.Point(215, 3);
+            this.radiobtn_date2.Name = "radiobtn_date2";
+            this.radiobtn_date2.Size = new System.Drawing.Size(60, 27);
+            this.radiobtn_date2.TabIndex = 7;
+            this.radiobtn_date2.Text = "Date";
+            this.radiobtn_date2.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radiobtn_time2
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(36, 13);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(61, 27);
-            this.radioButton4.TabIndex = 6;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Time";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radiobtn_time2.AutoSize = true;
+            this.radiobtn_time2.Checked = true;
+            this.radiobtn_time2.Location = new System.Drawing.Point(36, 3);
+            this.radiobtn_time2.Name = "radiobtn_time2";
+            this.radiobtn_time2.Size = new System.Drawing.Size(61, 27);
+            this.radiobtn_time2.TabIndex = 6;
+            this.radiobtn_time2.TabStop = true;
+            this.radiobtn_time2.Text = "Time";
+            this.radiobtn_time2.UseVisualStyleBackColor = true;
             // 
             // UC_Dashboard
             // 
@@ -966,17 +970,17 @@
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker4;
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker5;
         private System.Windows.Forms.Label label11;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_to2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_from2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox6;
         private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker6;
         private System.Windows.Forms.Label label13;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox6;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_start2;
         private System.Windows.Forms.Label label14;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private Bunifu.Framework.UI.BunifuDropdown dropdown_type2;
+        private System.Windows.Forms.RadioButton radiobtn_date2;
+        private System.Windows.Forms.RadioButton radiobtn_time2;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label15;
         private Bunifu.Framework.UI.BunifuDropdown dropdown_producer;

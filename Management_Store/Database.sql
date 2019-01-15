@@ -210,44 +210,13 @@ from BILL
 WHERE MONTH(DATE_TIME) = '1'
 select datefromparts(2019, 1, 10)
 
-create procedure GETREVENUE(@day1 datetime,@day2 datetime)
-as
-
-WITH theDates AS
-     (SELECT @day1 as theDate
-      UNION ALL
-      SELECT DATEADD(day, 1, theDate)
-        FROM theDates
-       WHERE DATEADD(day, 1, theDate) <= @day2
-     )
+create procedure GETREVENUEBYDAY(@day datetime)
+AS
+select ID_PRODUCT,SUM(AMOUNT) as Amount,PRODUCT.PURCHASE_PRICE
+from BILL,PRODUCT
+WHERE BILL.TRANGTHAI = 1 AND BILL.ID_PRODUCT = PRODUCT.ID AND BILL.DATE_TIME = @day
+GROUP BY ID_PRODUCT,PRODUCT.PURCHASE_PRICE
 
 
 
-DECLARE @StartDate datetime = '2019-01-01'
-       ,@EndDate   datetime = '2019-01-30'
-;
-
-WITH theDates AS
-     (SELECT @StartDate as theDate
-      UNION ALL
-      SELECT DATEADD(day, 1, theDate)
-        FROM theDates
-       WHERE DATEADD(day, 1, theDate) <= @EndDate
-     )
-One option is a recursive CTE:
-
-DECLARE @StartDate datetime = '2017-03-05'
-       ,@EndDate   datetime = '2017-04-11'
-;
-
-WITH theDates AS
-     (SELECT @StartDate as theDate
-      UNION ALL
-				SELECT DATEADD(day, 1, theDate)
-				FROM theDates
-				WHERE DATEADD(day, 1, theDate) <= @EndDate
-     )
-SELECT theDate, BILL.PRICE
-  FROM theDates,BILL
-OPTION (MAXRECURSION 0)
-;
+exec GETREVENUEBYDAY @day = '2019 - 01 - 14'

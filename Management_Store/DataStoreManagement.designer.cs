@@ -160,6 +160,20 @@ namespace Management_Store
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), produce);
 			return ((ISingleResult<GETPRODUCTBYPRODUCERResult1>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETREVENUEBYDAY")]
+		public ISingleResult<GETREVENUEBYDAYResult> GETREVENUEBYDAY([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day);
+			return ((ISingleResult<GETREVENUEBYDAYResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETREVENUEBY2DAY")]
+		public ISingleResult<GETREVENUEBY2DAYResult> GETREVENUEBY2DAY([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day1, day2);
+			return ((ISingleResult<GETREVENUEBY2DAYResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRODUCT")]
@@ -1173,6 +1187,130 @@ namespace Management_Store
 				if ((this._Total != value))
 				{
 					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETREVENUEBYDAYResult
+	{
+		
+		private System.Nullable<int> _ID_PRODUCT;
+		
+		private System.Nullable<int> _Amount;
+		
+		private int _PURCHASE_PRICE;
+		
+		public GETREVENUEBYDAYResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCT", DbType="Int")]
+		public System.Nullable<int> ID_PRODUCT
+		{
+			get
+			{
+				return this._ID_PRODUCT;
+			}
+			set
+			{
+				if ((this._ID_PRODUCT != value))
+				{
+					this._ID_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int")]
+		public System.Nullable<int> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PURCHASE_PRICE", DbType="Int NOT NULL")]
+		public int PURCHASE_PRICE
+		{
+			get
+			{
+				return this._PURCHASE_PRICE;
+			}
+			set
+			{
+				if ((this._PURCHASE_PRICE != value))
+				{
+					this._PURCHASE_PRICE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETREVENUEBY2DAYResult
+	{
+		
+		private System.Nullable<int> _ID_PRODUCT;
+		
+		private System.Nullable<int> _Amount;
+		
+		private int _PURCHASE_PRICE;
+		
+		public GETREVENUEBY2DAYResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCT", DbType="Int")]
+		public System.Nullable<int> ID_PRODUCT
+		{
+			get
+			{
+				return this._ID_PRODUCT;
+			}
+			set
+			{
+				if ((this._ID_PRODUCT != value))
+				{
+					this._ID_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int")]
+		public System.Nullable<int> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PURCHASE_PRICE", DbType="Int NOT NULL")]
+		public int PURCHASE_PRICE
+		{
+			get
+			{
+				return this._PURCHASE_PRICE;
+			}
+			set
+			{
+				if ((this._PURCHASE_PRICE != value))
+				{
+					this._PURCHASE_PRICE = value;
 				}
 			}
 		}

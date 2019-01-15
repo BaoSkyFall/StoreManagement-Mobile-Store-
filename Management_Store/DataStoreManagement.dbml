@@ -111,4 +111,21 @@
       <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GETREVENUEBYDAY" Method="GETREVENUEBYDAY">
+    <Parameter Name="day" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="GETREVENUEBYDAYResult">
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PURCHASE_PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETREVENUEBY2DAY" Method="GETREVENUEBY2DAY">
+    <Parameter Name="day1" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="day2" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="GETREVENUEBY2DAYResult">
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PURCHASE_PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
