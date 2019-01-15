@@ -25,6 +25,7 @@ namespace Management_Store
             using (DataStoreManagementDataContext db = new DataStoreManagementDataContext())
             {
                 bunifuCustomDataGrid1.DataSource = db.PRODUCTs.ToList();
+                txt_bill.Text = (db.BILLs.Count() +1 ).ToString();
             }
         }
         public List<PRODUCT> Loaded_Record(int page, int recordNum)
@@ -41,21 +42,21 @@ namespace Management_Store
             int index = bunifuCustomDataGrid1.CurrentRow.Index;
             txt_id.Text = bunifuCustomDataGrid1.Rows[index].Cells[0].Value.ToString();
             txt_name.Text = bunifuCustomDataGrid1.Rows[index].Cells[1].Value.ToString();
-            txt_category.Text = bunifuCustomDataGrid1.Rows[index].Cells[2].Value.ToString();
+            txt_category.Text = bunifuCustomDataGrid1.Rows[index].Cells[3].Value.ToString();
             txt_price.Text = bunifuCustomDataGrid1.Rows[index].Cells[5].Value.ToString();
             num_amout.Maximum = int.Parse(bunifuCustomDataGrid1.Rows[index].Cells[6].Value.ToString());
 
+           
             txt_total.Text = txt_price.Text;
         }
 
-        private void Transaction_Load(object sender, EventArgs e)
+        public void Transaction_Load(object sender, EventArgs e)
         {
-            lbl_date.Text = DateTime.Now.ToString("dd - MM - yyyy");
             try
             {
                 Loading();
                 bunifuCustomDataGrid1.DataSource = Loaded_Record(page_number, number_record);
-
+                
 
             }
             catch
@@ -165,7 +166,94 @@ namespace Management_Store
         }
         private void btn_printbill_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txt_namecustomer.Text != "")
+                {
+                    using (DataStoreManagementDataContext db = new DataStoreManagementDataContext())
+                    {
 
+                        bool type_pay;
+                        if (bunifuDropdown1.selectedIndex != 1)
+                        {
+                            type_pay = false;
+                        }
+                        else
+                        {
+                            type_pay = true;
+                        }
+                        BILL bil = new BILL
+                        {
+                            ID_BILL = int.Parse(txt_bill.Text),
+                            ID_PRODUCT = int.Parse(txt_id.Text),
+                            NAME_CUSTOMER = txt_namecustomer.Text,
+                            NAME_PRODUCT = txt_name.Text,
+                            PRODUCER = txt_category.Text,
+                            PRICE = int.Parse(txt_price.Text),
+                            AMOUNT = Convert.ToInt32(numericUpDown1.Value),
+                            DATE_TIME = bunifuDatepicker1.Value,
+                            ADVANCE = int.Parse(txt_price.Text),
+                            TYPE_PAY = bunifuDropdown1.selectedValue,
+                            TOTAL = int.Parse(txt_total.Text),
+                            TRANGTHAI = type_pay,
+
+
+                        };
+                        PRODUCT temp = db.PRODUCTs.SingleOrDefault(x => x.ID == bil.ID_PRODUCT);
+                        temp.INVENTORY--;
+                        if(temp.INVENTORY <0)
+                        {
+
+                            notifyIcon1.Visible = true;
+                            notifyIcon1.Icon = SystemIcons.Exclamation;
+                            notifyIcon1.BalloonTipTitle = "Don't have any product in Inventory";
+                            notifyIcon1.BalloonTipText = "Please choose another Product, this Product is sold out!";
+                            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+                            notifyIcon1.ShowBalloonTip(1000);
+                        }
+                        else
+                        {
+                            db.BILLs.InsertOnSubmit(bil);
+                            db.SubmitChanges();
+                            notifyIcon1.Visible = true;
+                            notifyIcon1.Icon = SystemIcons.Exclamation;
+                            notifyIcon1.BalloonTipTitle = "Add Successfull!";
+                            notifyIcon1.BalloonTipText = "Your Bill is added in Database!";
+                            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+                            notifyIcon1.ShowBalloonTip(1000);
+                            bunifuFlatButton2_Click(sender, e);
+                        }
+           
+
+                    };
+                }
+                
+                
+            }
+            catch
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.Icon = SystemIcons.Exclamation;
+                notifyIcon1.BalloonTipTitle = "Can't Add new Bill to Database";
+                notifyIcon1.BalloonTipText = "Check your input is Valid!";
+                notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+                notifyIcon1.ShowBalloonTip(1000);
+            }
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Loading();
+                bunifuCustomDataGrid1.DataSource = Loaded_Record(page_number, number_record);
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Cannot Find Database!");
+            }
         }
     }
 }

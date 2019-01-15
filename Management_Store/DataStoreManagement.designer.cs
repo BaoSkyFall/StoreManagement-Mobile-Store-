@@ -33,10 +33,13 @@ namespace Management_Store
     partial void InsertPRODUCT(PRODUCT instance);
     partial void UpdatePRODUCT(PRODUCT instance);
     partial void DeletePRODUCT(PRODUCT instance);
+    partial void InsertBILL(BILL instance);
+    partial void UpdateBILL(BILL instance);
+    partial void DeleteBILL(BILL instance);
     #endregion
 		
 		public DataStoreManagementDataContext() : 
-				base(global::Management_Store.Properties.Settings.Default.StoreManagementConnectionString1, mappingSource)
+				base(global::Management_Store.Properties.Settings.Default.StoreManagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -71,6 +74,91 @@ namespace Management_Store
 			{
 				return this.GetTable<PRODUCT>();
 			}
+		}
+		
+		public System.Data.Linq.Table<BILL> BILLs
+		{
+			get
+			{
+				return this.GetTable<BILL>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCERBYDAY")]
+		public ISingleResult<GETPRODUCERBYDAYResult> GETPRODUCERBYDAY([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day);
+			return ((ISingleResult<GETPRODUCERBYDAYResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCERBYMONTH")]
+		public ISingleResult<GETPRODUCERBYMONTHResult> GETPRODUCERBYMONTH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(3)")] string month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year);
+			return ((ISingleResult<GETPRODUCERBYMONTHResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCERBYYEAR")]
+		public ISingleResult<GETPRODUCERBYYEARResult> GETPRODUCERBYYEAR([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((ISingleResult<GETPRODUCERBYYEARResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCERBY2DAYS")]
+		public ISingleResult<GETPRODUCERBY2DAYSResult> GETPRODUCERBY2DAYS([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day1, day2);
+			return ((ISingleResult<GETPRODUCERBY2DAYSResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBYPRODUCER")]
+		public ISingleResult<GETPRODUCTBYPRODUCERResult> GETPRODUCTBYPRODUCER([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(20)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), produce);
+			return ((ISingleResult<GETPRODUCTBYPRODUCERResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCER")]
+		public ISingleResult<GETPRODUCERResult> GETPRODUCER()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GETPRODUCERResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBY2DAYS")]
+		public ISingleResult<GETPRODUCTBY2DAYSResult> GETPRODUCTBY2DAYS([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day1, day2, produce);
+			return ((ISingleResult<GETPRODUCTBY2DAYSResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBYYEAR")]
+		public ISingleResult<GETPRODUCTBYYEARResult> GETPRODUCTBYYEAR([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, produce);
+			return ((ISingleResult<GETPRODUCTBYYEARResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBYDAY")]
+		public ISingleResult<GETPRODUCTBYDAYResult> GETPRODUCTBYDAY([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> day, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), day, produce);
+			return ((ISingleResult<GETPRODUCTBYDAYResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBYMONTH")]
+		public ISingleResult<GETPRODUCTBYMONTHResult> GETPRODUCTBYMONTH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(3)")] string month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year, produce);
+			return ((ISingleResult<GETPRODUCTBYMONTHResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GETPRODUCTBYPRODUCER")]
+		public ISingleResult<GETPRODUCTBYPRODUCERResult1> GETPRODUCTBYPRODUCER1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(20)")] string produce)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), produce);
+			return ((ISingleResult<GETPRODUCTBYPRODUCERResult1>)(result.ReturnValue));
 		}
 	}
 	
@@ -276,6 +364,816 @@ namespace Management_Store
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BILL")]
+	public partial class BILL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_BILL;
+		
+		private System.Nullable<int> _ID_PRODUCT;
+		
+		private string _NAME_CUSTOMER;
+		
+		private string _NAME_PRODUCT;
+		
+		private string _PRODUCER;
+		
+		private int _PRICE;
+		
+		private System.DateTime _DATE_TIME;
+		
+		private int _AMOUNT;
+		
+		private System.Nullable<int> _ADVANCE;
+		
+		private string _TYPE_PAY;
+		
+		private int _TOTAL;
+		
+		private System.Nullable<bool> _TRANGTHAI;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_BILLChanging(int value);
+    partial void OnID_BILLChanged();
+    partial void OnID_PRODUCTChanging(System.Nullable<int> value);
+    partial void OnID_PRODUCTChanged();
+    partial void OnNAME_CUSTOMERChanging(string value);
+    partial void OnNAME_CUSTOMERChanged();
+    partial void OnNAME_PRODUCTChanging(string value);
+    partial void OnNAME_PRODUCTChanged();
+    partial void OnPRODUCERChanging(string value);
+    partial void OnPRODUCERChanged();
+    partial void OnPRICEChanging(int value);
+    partial void OnPRICEChanged();
+    partial void OnDATE_TIMEChanging(System.DateTime value);
+    partial void OnDATE_TIMEChanged();
+    partial void OnAMOUNTChanging(int value);
+    partial void OnAMOUNTChanged();
+    partial void OnADVANCEChanging(System.Nullable<int> value);
+    partial void OnADVANCEChanged();
+    partial void OnTYPE_PAYChanging(string value);
+    partial void OnTYPE_PAYChanged();
+    partial void OnTOTALChanging(int value);
+    partial void OnTOTALChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
+    #endregion
+		
+		public BILL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_BILL", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_BILL
+		{
+			get
+			{
+				return this._ID_BILL;
+			}
+			set
+			{
+				if ((this._ID_BILL != value))
+				{
+					this.OnID_BILLChanging(value);
+					this.SendPropertyChanging();
+					this._ID_BILL = value;
+					this.SendPropertyChanged("ID_BILL");
+					this.OnID_BILLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCT", DbType="Int")]
+		public System.Nullable<int> ID_PRODUCT
+		{
+			get
+			{
+				return this._ID_PRODUCT;
+			}
+			set
+			{
+				if ((this._ID_PRODUCT != value))
+				{
+					this.OnID_PRODUCTChanging(value);
+					this.SendPropertyChanging();
+					this._ID_PRODUCT = value;
+					this.SendPropertyChanged("ID_PRODUCT");
+					this.OnID_PRODUCTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_CUSTOMER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_CUSTOMER
+		{
+			get
+			{
+				return this._NAME_CUSTOMER;
+			}
+			set
+			{
+				if ((this._NAME_CUSTOMER != value))
+				{
+					this.OnNAME_CUSTOMERChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_CUSTOMER = value;
+					this.SendPropertyChanged("NAME_CUSTOMER");
+					this.OnNAME_CUSTOMERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this.OnNAME_PRODUCTChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_PRODUCT = value;
+					this.SendPropertyChanged("NAME_PRODUCT");
+					this.OnNAME_PRODUCTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this.OnPRODUCERChanging(value);
+					this.SendPropertyChanging();
+					this._PRODUCER = value;
+					this.SendPropertyChanged("PRODUCER");
+					this.OnPRODUCERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Int NOT NULL")]
+		public int PRICE
+		{
+			get
+			{
+				return this._PRICE;
+			}
+			set
+			{
+				if ((this._PRICE != value))
+				{
+					this.OnPRICEChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE = value;
+					this.SendPropertyChanged("PRICE");
+					this.OnPRICEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE_TIME", DbType="Date NOT NULL")]
+		public System.DateTime DATE_TIME
+		{
+			get
+			{
+				return this._DATE_TIME;
+			}
+			set
+			{
+				if ((this._DATE_TIME != value))
+				{
+					this.OnDATE_TIMEChanging(value);
+					this.SendPropertyChanging();
+					this._DATE_TIME = value;
+					this.SendPropertyChanged("DATE_TIME");
+					this.OnDATE_TIMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AMOUNT", DbType="Int NOT NULL")]
+		public int AMOUNT
+		{
+			get
+			{
+				return this._AMOUNT;
+			}
+			set
+			{
+				if ((this._AMOUNT != value))
+				{
+					this.OnAMOUNTChanging(value);
+					this.SendPropertyChanging();
+					this._AMOUNT = value;
+					this.SendPropertyChanged("AMOUNT");
+					this.OnAMOUNTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADVANCE", DbType="Int")]
+		public System.Nullable<int> ADVANCE
+		{
+			get
+			{
+				return this._ADVANCE;
+			}
+			set
+			{
+				if ((this._ADVANCE != value))
+				{
+					this.OnADVANCEChanging(value);
+					this.SendPropertyChanging();
+					this._ADVANCE = value;
+					this.SendPropertyChanged("ADVANCE");
+					this.OnADVANCEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE_PAY", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TYPE_PAY
+		{
+			get
+			{
+				return this._TYPE_PAY;
+			}
+			set
+			{
+				if ((this._TYPE_PAY != value))
+				{
+					this.OnTYPE_PAYChanging(value);
+					this.SendPropertyChanging();
+					this._TYPE_PAY = value;
+					this.SendPropertyChanged("TYPE_PAY");
+					this.OnTYPE_PAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Int NOT NULL")]
+		public int TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this.OnTOTALChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL = value;
+					this.SendPropertyChanged("TOTAL");
+					this.OnTOTALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class GETPRODUCERBYDAYResult
+	{
+		
+		private string _PRODUCER;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCERBYDAYResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this._PRODUCER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCERBYMONTHResult
+	{
+		
+		private string _PRODUCER;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCERBYMONTHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this._PRODUCER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCERBYYEARResult
+	{
+		
+		private string _PRODUCER;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCERBYYEARResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this._PRODUCER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCERBY2DAYSResult
+	{
+		
+		private string _PRODUCER;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCERBY2DAYSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this._PRODUCER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBYPRODUCERResult
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBYPRODUCERResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCERResult
+	{
+		
+		private string _PRODUCER;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCERResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRODUCER", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string PRODUCER
+		{
+			get
+			{
+				return this._PRODUCER;
+			}
+			set
+			{
+				if ((this._PRODUCER != value))
+				{
+					this._PRODUCER = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBY2DAYSResult
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBY2DAYSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBYYEARResult
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBYYEARResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBYDAYResult
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBYDAYResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBYMONTHResult
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBYMONTHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GETPRODUCTBYPRODUCERResult1
+	{
+		
+		private string _NAME_PRODUCT;
+		
+		private System.Nullable<int> _Total;
+		
+		public GETPRODUCTBYPRODUCERResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCT", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string NAME_PRODUCT
+		{
+			get
+			{
+				return this._NAME_PRODUCT;
+			}
+			set
+			{
+				if ((this._NAME_PRODUCT != value))
+				{
+					this._NAME_PRODUCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Int")]
+		public System.Nullable<int> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
 			}
 		}
 	}

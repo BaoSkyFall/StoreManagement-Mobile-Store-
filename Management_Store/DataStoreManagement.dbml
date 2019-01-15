@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StoreManagement" Class="DataStoreManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HM8SG2K\SQLEXPRESS;Initial Catalog=StoreManagement;Integrated Security=True" SettingsObjectName="Management_Store.Properties.Settings" SettingsPropertyName="StoreManagementConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JCG84Q8\SQLEXPRESS;Initial Catalog=StoreManagement;Integrated Security=True" SettingsObjectName="Management_Store.Properties.Settings" SettingsPropertyName="StoreManagementConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.PRODUCT" Member="PRODUCTs">
     <Type Name="PRODUCT">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -11,4 +11,104 @@
       <Column Name="INVENTORY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.BILL" Member="BILLs">
+    <Type Name="BILL">
+      <Column Name="ID_BILL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_CUSTOMER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_TIME" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AMOUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ADVANCE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_PAY" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GETPRODUCERBYDAY" Method="GETPRODUCERBYDAY">
+    <Parameter Name="day" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="GETPRODUCERBYDAYResult">
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCERBYMONTH" Method="GETPRODUCERBYMONTH">
+    <Parameter Name="month" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="year" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="GETPRODUCERBYMONTHResult">
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCERBYYEAR" Method="GETPRODUCERBYYEAR">
+    <Parameter Name="year" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="GETPRODUCERBYYEARResult">
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCERBY2DAYS" Method="GETPRODUCERBY2DAYS">
+    <Parameter Name="day1" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="day2" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="GETPRODUCERBY2DAYSResult">
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBYPRODUCER" Method="GETPRODUCTBYPRODUCER">
+    <Parameter Name="produce" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GETPRODUCTBYPRODUCERResult">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCER" Method="GETPRODUCER">
+    <ElementType Name="GETPRODUCERResult">
+      <Column Name="PRODUCER" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBY2DAYS" Method="GETPRODUCTBY2DAYS">
+    <Parameter Name="day1" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="day2" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="produce" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="GETPRODUCTBY2DAYSResult">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBYYEAR" Method="GETPRODUCTBYYEAR">
+    <Parameter Name="year" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="produce" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="GETPRODUCTBYYEARResult">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBYDAY" Method="GETPRODUCTBYDAY">
+    <Parameter Name="day" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="produce" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="GETPRODUCTBYDAYResult">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBYMONTH" Method="GETPRODUCTBYMONTH">
+    <Parameter Name="month" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="year" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="produce" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="GETPRODUCTBYMONTHResult">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GETPRODUCTBYPRODUCER" Method="GETPRODUCTBYPRODUCER1">
+    <Parameter Name="produce" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GETPRODUCTBYPRODUCERResult1">
+      <Column Name="NAME_PRODUCT" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

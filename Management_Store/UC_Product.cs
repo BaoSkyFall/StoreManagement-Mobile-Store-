@@ -38,7 +38,7 @@ namespace Management_Store
             }
                 return resulf;
         }
-        private void UC_Product_Load(object sender, EventArgs e)
+        public void UC_Product_Load(object sender, EventArgs e)
         {
             try
             {
@@ -300,12 +300,7 @@ namespace Management_Store
             bunifuCustomDataGrid1.DataSource = Loaded_Record(page_number, number_record);
         }
 
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
-        {
-            Import_Excel excel = new Import_Excel();
-            db_excel = excel.db_form;
-            excel.Show();
-        }
+  
 
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -346,6 +341,13 @@ namespace Management_Store
             {
 
             }
+        }
+
+        private void bunifuFlatButton3_Click_1(object sender, EventArgs e)
+        {
+            Import_Excel excel = new Import_Excel();
+            db_excel = excel.db_form;
+            excel.Show();
         }
     }
 }

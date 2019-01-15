@@ -34,19 +34,40 @@ namespace Management_Store
 
         private void btn_login_Click_1(object sender, EventArgs e)
         {
-            time_slide.Tick += new EventHandler(panel_left_move);
-            time_slide.Interval = 10;
-            time_slide.Start();
+            try
+            {
+                if (txt_user.Text == "admin" && txt_password.Text == "123")
+                {
+                    time_slide.Tick += new EventHandler(panel_left_move);
+                    time_slide.Interval = 10;
+                    time_slide.Start();
 
-            pic_rocket.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
-            bunifuTransition2.HideSync(panel_title);
-            pic_rocket.Visible = false;
-            bunifuTransition1.ShowSync(pic_rocket);
-      
-        
-            time_rocket.Tick += new EventHandler(rocketup);
-            time_rocket.Interval = 20;
-            time_rocket.Start();
+                    pic_rocket.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
+                    bunifuTransition2.HideSync(panel_title);
+                    pic_rocket.Visible = false;
+                    bunifuTransition1.ShowSync(pic_rocket);
+
+
+                    time_rocket.Tick += new EventHandler(rocketup);
+                    time_rocket.Interval = 20;
+                    time_rocket.Start();
+                }
+                else
+                {
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.Icon = SystemIcons.Exclamation;
+                    notifyIcon1.BalloonTipTitle = "Wrong Password or Username";
+                    notifyIcon1.BalloonTipText = "";
+                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+                    notifyIcon1.ShowBalloonTip(1000);
+                 
+                }
+            }
+            catch
+            {
+          
+            }
+         
 
 
           
@@ -105,6 +126,12 @@ namespace Management_Store
             {
                 btn_login_Click_1(sender, e);
             }
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+
         }
     }
 }

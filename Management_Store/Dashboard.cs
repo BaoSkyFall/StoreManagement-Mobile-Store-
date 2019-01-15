@@ -51,6 +51,7 @@ namespace Management_Store
         {
             panel_tick.Location = new Point(1, bunifuFlatButton4.Location.Y);
             uC_Product1.Visible = true;
+            uC_Product1.UC_Product_Load(sender, e);
             uC_Product1.BringToFront();
 
 
@@ -59,20 +60,39 @@ namespace Management_Store
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            panel_tick.Location = new Point(1, bunifuFlatButton1.Location.Y);
-            uC_Dashboard1.Visible = true;
-            uC_Dashboard1.BringToFront();
+       
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             panel_tick.Location = new Point(1, bunifuFlatButton2.Location.Y);
             transaction1.Visible = true;
+            transaction1.Transaction_Load(sender, e);
             transaction1.BringToFront();
         }
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            panel_tick.Location = new Point(1, bunifuFlatButton1.Location.Y);
+            uC_Dashboard1.Visible = true;
+            uC_Dashboard1.UC_Dashboard_Load(sender, e);
+            uC_Dashboard1.BringToFront();
+        }
 
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            panel_tick.Location = new Point(1, bunifuFlatButton5.Location.Y);
+            manageInvoice1.Visible = true;
+            manageInvoice1.ManageInvoice_Load(sender, e);
+            manageInvoice1.BringToFront();
+        }
         private void Dashboard_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(1);
 
         }
     }

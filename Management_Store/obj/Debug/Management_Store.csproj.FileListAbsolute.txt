@@ -34,3 +34,4 @@ D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.
 D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.csproj.CopyComplete
 D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.exe
 D:\IT\LT Windows\Final Project\Test\Management_Store\obj\Debug\Management_Store.pdb
+E:\IT K16\LT Windows\Do An Cuoi Ky\Final_Project_Management_Store\Management_Store\obj\Debug\Management_Store.ManageInvoice.resources

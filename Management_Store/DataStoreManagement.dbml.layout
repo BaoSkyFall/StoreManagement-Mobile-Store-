@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataStoreManagement">
   <DataContextMoniker Name="/DataStoreManagementDataContext" />
   <nestedChildShapes>
-    <classShape Id="652533ac-ece7-453f-9bda-61519b963123" absoluteBounds="2.875, 1.25, 2, 2.1554996744791666">
+    <classShape Id="86163b65-a26f-4de1-a247-8e65e9df4bd7" absoluteBounds="3.5, 1.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/DataStoreManagementDataContext/PRODUCT" />
       <nestedChildShapes>
-        <elementListCompartment Id="ec874260-2568-428d-8eaf-45f3f5e2d097" absoluteBounds="2.89, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e269b1c9-fc05-4742-b8d6-0f7988044690" absoluteBounds="3.515, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="900f2051-32e5-4051-8c62-6f4ffce14ddc" absoluteBounds="6.875, 2.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DataStoreManagementDataContext/BILL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3435b0b9-befd-4637-b80a-8c41ae6dc175" absoluteBounds="6.89, 2.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
